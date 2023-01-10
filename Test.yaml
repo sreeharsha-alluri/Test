@@ -8,13 +8,13 @@ spec:
     image: gcr.io/kaniko-project/executor:latest
     args:
     - "--context=git://github.com/scriptcamp/kubernetes-kaniko"
-    - "--destination=<dockerhub-username>/kaniko-demo-image:1.0"
+    - "--destination=kgopi424/kaniko-demo-image:3.0"
     volumeMounts:
     - name: kaniko-secret
       mountPath: /kaniko/.docker
   restartPolicy: Never
   volumes:
-  - name: ssh -i "ZT.pem" ubuntu@ec2-54-167-112-23.compute-1.amazonaws.com
+  - name: kaniko-secret
     secret:
       secretName: dockercred
       items:
